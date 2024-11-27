@@ -13,11 +13,11 @@ namespace Repository.Repository.Extensions
     {
         public static IServiceCollection AddRepositoryConfigures(this IServiceCollection services)
         {
+
             services.AddScoped<IScoreRepository, ScoreRepository>();
             services.AddScoped<ICommentRepository, CommentRepository>();
             services.AddScoped<IPaymentRepository, PaymentRepository>();
             services.AddScoped<IBookRepository, BookRepository>();
-            
             return services;
         }
     }
