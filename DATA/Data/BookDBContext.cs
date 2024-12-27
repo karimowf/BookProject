@@ -1,6 +1,10 @@
-﻿using DATA.Data.Entity;
+﻿using BookService.TypeConfigure;
+using DATA.Data.Entity;
+using DATA.TypeConfigure;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using Project.Share;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,6 +15,7 @@ namespace DATA.Data
 {
     public class BookDbContext : IdentityDbContext<User, Role, string>
     {
+
         public BookDbContext(DbContextOptions<BookDbContext> options) : base(options)
         {
         }
@@ -22,9 +27,8 @@ namespace DATA.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Score>()
-           .Property(e => e.Scores)
-           .HasPrecision(18, 2);
+            modelBuilder.ApplyConfiguration(new BookEntityConfigure());
+            modelBuilder.ApplyConfiguration(new ScoreEntityConfigure());
 
             base.OnModelCreating(modelBuilder);
         }

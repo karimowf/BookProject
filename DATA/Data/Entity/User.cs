@@ -13,6 +13,10 @@ namespace DATA.Data.Entity
         public DateTime DateOfBirth { get; set; }
         public DateTime CreatedDate { get; set; }
         public int Age { get; set; }
+        public string? Bio { get; set; }
+        public string? Expertise { get; set; }
+        public string? PortfolioUrl { get; set; }
+        public ICollection<BookUser> bookUsers { get; set; }
         public ICollection<Payment> Payments { get; set; }
         public ICollection<Comment> Comments { get; set; }
     }

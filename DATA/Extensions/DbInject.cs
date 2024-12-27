@@ -14,7 +14,7 @@ namespace DATA.Extensions
 {
     public static class DbInject
     {
-        public static void AddServices(this IServiceCollection services, IConfiguration configuration)
+        public static void AddDBConfigures(this IServiceCollection services, IConfiguration configuration)
         {
             services.AddDbContext<BookDbContext>(op =>
             {

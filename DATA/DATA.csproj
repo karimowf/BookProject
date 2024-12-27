@@ -21,4 +21,8 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Project.Share\Project.Share.csproj" />
+  </ItemGroup>
+
 </Project>

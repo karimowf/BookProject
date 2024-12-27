@@ -9,6 +9,6 @@ namespace Repository.Abstract
 {
     public interface IBookRepository : IGenericRepository<Book>
     {
-        Task<Book> Search(string input);
+        Task<List<Book>> Search<T>(T input);
     }
 }

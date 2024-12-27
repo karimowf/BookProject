@@ -1,4 +1,7 @@
-﻿using Project.Domain.UoW.Abstract;
+﻿using DATA.Data;
+using Project.Domain.UoW.Abstract;
+using Repository.Abstract;
+using Repository.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,7 +17,6 @@ namespace Project.Domain.UoW.Concrete
         public UnitOfWork(BookDbContext context)
         {
             this.context = context;
-
             BookRepository = new BookRepository(this.context);
             CommentRepository = new CommentRepository(this.context);
             PaymentRepository = new PaymentRepository(this.context);
@@ -57,6 +59,6 @@ namespace Project.Domain.UoW.Concrete
         public void Dispose()
         {
             context.Dispose();
-        }
+        }   
     }
 }
